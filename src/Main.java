@@ -1,15 +1,37 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+class Operazione {
+    void esegui() throws Exception {
+        System.out.println("Eseguo un'operazione generica.");
+    }
+}
+class Divisione extends Operazione throws ArithmeticException {
+    @Override
+    void esegui(){
+        int risultato = 10 / 0;
+        System.out.println("Risultato: " + risultato);
+    }
+}
+class Stampa extends Operazione {
+    @Override
+    void esegui() {
+        System.out.println("Stampo un messaggio.");
+    }
+}
+
+        import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        ArrayList operazioni = new ArrayList<Operazione>();
+        operazioni.add(new Stampa());
+        operazioni.add(new Divisione());
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        for (Operazione operazione : operazioni) {
+            try {
+                operazione.esegui();
+            } catch (Exception e) {
+                System.out.println("Errore generico.");
+            } catch (ArithmeticException e) {
+                System.out.println("Errore: divisione per zero.");
+            }
         }
     }
 }

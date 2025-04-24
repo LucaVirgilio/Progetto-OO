@@ -17,9 +17,8 @@ public class ToDo {
     private Utente idAutore;
 
     private Color coloreSfondo;
-    private static List<ToDo> listaToDo = new ArrayList<>();
 
-    public ToDo(String titolo, String descrizione, String url, String link, String immagine, LocalDate dataScadenza, StatoToDo stato, Utente idAutore) {
+    public ToDo (String titolo, String descrizione, String url, String link, String immagine, LocalDate dataScadenza, StatoToDo stato, Utente idAutore) {
         this.titolo = titolo;
         this.descrizione = descrizione;
         this.url = url;
@@ -29,12 +28,10 @@ public class ToDo {
         this.stato = stato;
         this.idAutore = idAutore;
 
-        this.coloreSfondo = Color.WHITE; // colore di default
 
     }
 
 
-    public String getTitolo() {
         return titolo;
     }
 
@@ -96,35 +93,13 @@ public class ToDo {
 
     public void setIdAutore(Utente idAutore) {
         this.idAutore = idAutore;
-    }
-
-    public static void CreaToDo (String titolo, String descrizione, String url, String link, String immagine, LocalDate dataScadenza, StatoToDo stato, Utente idAutore ){
-        ToDo todo = new ToDo(titolo, descrizione, url, link, immagine, dataScadenza, stato, idAutore);
-        listaToDo.add(todo);
-        System.out.println("ToDo creato con successo e aggiunto alla lista" + titolo);
-    }
-
-    public static ToDo cercaTodo(String Titolo){
-        for (ToDo todo : listaToDo) {
-            if (todo.getTitolo().equalsIgnoreCase(Titolo)) {
-                return todo;
-
-            }
-
-        }
-        return null;
-    }
-
-    public void modificaTodo (String nuovoTitolo, String nuovaDescrizione, LocalDate nuovaDatadiscadenza){
-        this.titolo = nuovoTitolo;
-        this.descrizione = nuovaDescrizione;
-        this.dataScadenza = nuovaDatadiscadenza;
-        System.out.println("ToDo modificato con successo." + titolo);
-    }
-
-    public static void eliminaToDo(String titolo) {
-        listaToDo.removeIf(todo -> todo.getTitolo().equalsIgnoreCase(titolo));
-        System.out.println("ToDo eliminato dalla bacheca: " + titolo);
 
     }
+
+    }
+
+
+    }
+
+
 }
