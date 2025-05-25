@@ -32,5 +32,3 @@ public class UtenteController{
 }
 
 
-
-questo va nel package controller e si chiama come in foto UtenteController
