@@ -133,4 +133,3 @@ public class InterfacciaPrincipale extends JFrame{
 }
 
 
-questo è il codice nel package interfacce con la classe che si chiama InterfacciaPrincipale
